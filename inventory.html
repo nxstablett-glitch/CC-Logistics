@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>CC Logistics</h2>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="inventory.html">Inventory</a>
+
+</div>
+
+<div class="main">
+
+<h1>Inventory</h1>
+
+<input id="name" placeholder="Item name">
+<input id="stock" placeholder="Stock">
+<input id="min" placeholder="Min">
+<input id="max" placeholder="Max">
+
+<button onclick="addItem()">Add</button>
+
+<table id="items"></table>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
