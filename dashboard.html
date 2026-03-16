@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="github.js"></script>
+<script src="charts.js"></script>
+
 </head>
 
 <body>
@@ -12,33 +18,36 @@
 
 <a href="dashboard.html">Dashboard</a>
 <a href="inventory.html">Inventory</a>
+<a href="production.html">Production</a>
 <a href="warehouses.html">Warehouses</a>
-<a href="users.html">Users</a>
+<a href="transfers.html">Transfers</a>
 
 </div>
 
 <div class="main">
 
-<h1>Dashboard</h1>
+<h1>Logistics Dashboard</h1>
 
 <div class="cards">
 
 <div class="card">
-<h3>Total Items</h3>
-<h2 id="items">0</h2>
+<h3>Total Materials</h3>
+<h2 id="matCount"></h2>
 </div>
 
 <div class="card">
 <h3>Total Stock</h3>
-<h2 id="stock">0</h2>
+<h2 id="stockTotal"></h2>
 </div>
 
-<div class="card red">
-<h3>Low Stock</h3>
-<h2 id="low">0</h2>
+<div class="card">
+<h3>Production Logs</h3>
+<h2 id="prodLogs"></h2>
 </div>
 
 </div>
+
+<canvas id="stockChart"></canvas>
 
 </div>
 

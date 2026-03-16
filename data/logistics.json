@@ -1,0 +1,40 @@
+const REPO = "nxstablett-glitch/CC-Logistics"
+const FILE = "data/logistics.json"
+const TOKEN = "DEIN_GITHUB_TOKEN"
+
+async function loadData(){
+
+ const res = await fetch(
+ `https://api.github.com/repos/${REPO}/contents/${FILE}`
+ )
+
+ const data = await res.json()
+
+ const decoded = atob(data.content)
+
+ window.sha = data.sha
+
+ return JSON.parse(decoded)
+
+}
+
+async function saveData(newData){
+
+ const content = btoa(JSON.stringify(newData,null,2))
+
+ await fetch(
+ `https://api.github.com/repos/${REPO}/contents/${FILE}`,
+ {
+  method:"PUT",
+  headers:{
+   "Authorization":"token "+TOKEN,
+   "Content-Type":"application/json"
+  },
+  body:JSON.stringify({
+   message:"update logistics data",
+   content,
+   sha:window.sha
+  })
+ })
+
+}

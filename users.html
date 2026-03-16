@@ -17,15 +17,22 @@
 
 <div class="main">
 
-<h1>Create User</h1>
+<h1>User Management</h1>
 
-<input id="newuser" placeholder="Username">
-<input id="newpass" placeholder="Password">
+<input id="newUser" placeholder="Username">
+<input id="newPass" placeholder="Password">
 
-<button onclick="createUser()">Create</button>
+<select id="role">
+<option>admin</option>
+<option>officer</option>
+<option>logistic</option>
+</select>
+
+<button onclick="createUser()">Create User</button>
 
 </div>
 
+<script src="data.js"></script>
 <script src="app.js"></script>
 
 </body>
